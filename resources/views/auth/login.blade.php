@@ -83,7 +83,7 @@
                             <a class="fs-sm fw-semibold text-decoration-none my-1"
                                 href="{{ url('request-password-reset') }}">Forgot password?</a>
                         </div>
-                        <button class="btn btn-lg btn-primary w-100 mb-4" type="submit">Sign in</button>
+                        <button class="btn btn-lg btn-primary w-100 mb-4" type="submit">xl</button>
 
 
                     </form>
