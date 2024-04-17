@@ -135,8 +135,8 @@ class TargetController extends AdminController
             ->options(\App\Models\Project::where('company_id', $u->company_id)->pluck('name', 'id'))
             ->rules('required');
         $form->select('department_id', __('Main Department'))
-            ->options(\App\Models\Department::where('company_id', $u->company_id)->pluck('name', 'id'))
-            ->rules('required');
+            ->options(\App\Models\Department::where('company_id', $u->company_id)->pluck('name', 'id'));
+          
 
         $form->radio('type', __('Goal Type'))
             ->options([

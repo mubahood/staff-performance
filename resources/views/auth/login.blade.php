@@ -1,3 +1,6 @@
+
+
+
 @extends('around.layouts.base-layout')
 {{-- account-details --}}
 @section('base-content')
@@ -7,11 +10,11 @@
 
             <!-- Home button -->
             <a class=" rounded-circle position-absolute top-0 end-0 p-0 mt-3 me-3 mt-sm-4 me-sm-4" href="javascript:;"
-                data-bs-toggle="tooltip" data-bs-placement="left" title="Powered By 8Technologies Consults"
-                aria-label="Powered By 8Technologies Consults" style="width: 70px; border-radius: 50%; ">
+                data-bs-toggle="tooltip" data-bs-placement="left" title="Powered By Excellentia East Africa"
+                aria-label="Powered By Excellentia East Africa" style="width: 70px; border-radius: 50%; ">
 
                 <img class="text-center img img-fluid rounded-circle" style="border-radius: 50%;"
-                    src="{{ url('assets/img/logo.png') }}" alt="logo">
+                    src="{{ url('assets/img/logo1.jpg') }}" alt="logo">
 
             </a>
 
@@ -83,7 +86,7 @@
                             <a class="fs-sm fw-semibold text-decoration-none my-1"
                                 href="{{ url('request-password-reset') }}">Forgot password?</a>
                         </div>
-                        <button class="btn btn-lg btn-primary w-100 mb-4" type="submit">xl</button>
+                        <button class="btn btn-lg btn-primary w-100 mb-4" type="submit">Sign in</button>
 
 
                     </form>
@@ -91,7 +94,7 @@
 
                 <!-- Copyright -->
                 <p class="nav w-100 fs-sm pt-5 mt-auto mb-5" style="max-width: 526px;"><span
-                        class="text-body-secondary">&copy; All rights reserved. Made by</span><a
+                        class="text-body-secondary">&copy; Powered  by</span><a
                         class="nav-link d-inline-block p-0 ms-1" href="{{ '' }}" target="_blank"
                         rel="noopener">Excellentia East Africa</a></p>
             </div>

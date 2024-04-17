@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'Excellentia East Africa',
+    'name' => 'Staff Performance',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>Excellentia East Africa</b> admin',
+    'logo' => '<b>Staff Performance</b> admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<b>EEA</b>',
+    'logo-mini' => '<b>SP</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     | If your page is going to be accessed via https, set it to `true`.
     |
     */
-    'https' => env('ADMIN_HTTPS',true),
+    'https' => env('ADMIN_HTTPS', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -128,6 +128,7 @@ return [
             ],
         ],
 
+    
         // Add "remember me" to login form
         'remember' => true,
 

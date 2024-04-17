@@ -84,7 +84,7 @@ use App\Models\Utils;
             </div>
         </a>
 
-        <div class="col-sm-6 col-lg-3">
+       {{--  <div class="col-sm-6 col-lg-3">
             <div class="card mt-2 mt-md-4 mb-3 border border-primary border-5">
                 <div class="card-body">
                     <div class="d-flex">
@@ -98,9 +98,9 @@ use App\Models\Utils;
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-        <div class="col-sm-6 col-lg-3">
+        {{-- <div class="col-sm-6 col-lg-3">
             <div class="card mt-2 mt-md-4 mb-3 border border-primary border-5">
                 <div class="card-body">
                     <div class="d-flex">
@@ -114,8 +114,8 @@ use App\Models\Utils;
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>--}}
+    </div> 
 
     <div class="row">
         <div class="col-sm-6 col-lg-3">

@@ -290,7 +290,7 @@ class TaskController extends AdminController
 
         $form->text('name', __('Task title'))->rules('required');
         $form->quill('task_description', __('Task description'));
-        $form->decimal('hours', __('Hours'))->rules('required')
+        $form->decimal('hours', __('Hours'))
             ->help('Enter the number of hours you expect to spend on this task. (e.g. 1.5)');
 
         $form->date('due_to_date', __('Due to date'))
@@ -301,7 +301,7 @@ class TaskController extends AdminController
             'Low' => 'Low',
             'Medium' => 'Medium',
             'High' => 'High',
-        ])->default('Medium')->rules('required');
+        ])->default('Medium');
 
         $form->select('project_section_id', __('Due Project'))
             ->options($sections);

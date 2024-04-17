@@ -146,8 +146,7 @@ class EventController extends AdminController
             'Low' => 'Low',
             'Medium' => 'Medium',
             'High' => 'High',
-        ])->default('Medium')
-            ->rules('required');
+        ])->default('Medium');
 
         $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
             Administrator::where([
