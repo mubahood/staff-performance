@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\MainController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Models\Company;
 use App\Models\Gen;
 use App\Models\Meeting;
 use App\Models\Project;
@@ -16,11 +17,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Dompdf\Dompdf;
+
 
 
 Route::get('report', function () {
 
-    $id = $_GET['id'];
+    // $id = $_GET['id'];
     $item = ReportModel::find($id);
     $pdf = App::make('dompdf.wrapper');
     $pdf->set_option('enable_html5_parser', TRUE);
@@ -28,6 +31,15 @@ Route::get('report', function () {
         'item' => $item,
     ])->render());
     return $pdf->stream('test.pdf');
+});
+
+Route::get('form', function () {
+  //  $id = $_GET['id'];
+   // $company = Company::find($id);
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->set_option('enable_html5_parser', TRUE);
+    $pdf->loadHTML(view('company-form')->render());
+    return $pdf->stream('company-form.pdf');
 });
 
 
@@ -141,9 +153,7 @@ Route::get('test', function () {
 });
 
 
-Route::get('policy', function () {
-    return view('policy');
-});
+
 
 Route::get('/gen-form', function () {
     die(Gen::find($_GET['id'])->make_forms());

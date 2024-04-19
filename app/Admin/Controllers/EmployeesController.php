@@ -101,7 +101,7 @@ class EmployeesController extends AdminController
         $grid->column('masters_university_name')->hide();
         $grid->column('masters_university_year_graduated')->hide();
         $grid->column('phd_university_name')->hide();
-        $grid->column('can_evaluate','Evaluate')
+        $grid->column('can_evaluate', 'Evaluate')
             ->label([
                 'Yes' => 'success',
                 'No' => 'danger',
@@ -164,8 +164,8 @@ class EmployeesController extends AdminController
 
 
         $form->select('managed_by', __('Supervisor'))
-            ->options(\App\Models\User::where('company_id', auth()->user()->company_id)->pluck('name', 'id'))
-            ->rules('required');
+            ->options(\App\Models\User::where('company_id', auth()->user()->company_id)->pluck('name', 'id'));
+
 
         $form->divider('PERSONAL INFORMATION');
 

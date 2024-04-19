@@ -39,49 +39,15 @@ class HomeController extends Controller
                 ]));
             });
         });
+
+
+
         return $content;
 
         $man = Utils::manifest($u);
         $admin = Auth::user();
 
-        //$faker = Faker::create();
 
-        //example list of dental appointment titles
-        /* 
-        $dental_appointment_titles = [
-            "Teeth Cleaning",
-            "Cavity Filling",
-            "Root Canal",
-            "Tooth Extraction",
-            "Braces Adjustment",
-            "Teeth Whitening",
-            "Dental Implant Consultation",
-            "Gum Disease Treatment",
-            "Oral Surgery Consultation",
-            "Orthodontic Consultation"
-        ];
-        $admins = Administrator::all();
-        foreach (Event::all() as $key => $event) {
-
-            $event->created_at = $faker->dateTimeBetween('-1 months', 'now');
-            $event->updated_at = $faker->dateTimeBetween('-1 months', 'now');
-            $event->administrator_id = $admins[rand(0, (count($admins)-1))]->id;
-            $event->reminder_state = $faker->randomElement(['On', 'Off']);
-            $event->priority = $faker->randomElement(['Low', 'Medium', 'High']);
-            $event->event_date = $faker->dateTimeBetween('-1 months', '+1 months');
-            $event->reminder_date = $faker->dateTimeBetween('-1 months', '+1 months');
-            $event->description = $faker->text(200);
-            $event->company_id = $admin->company_id;
-            $event->remind_beofre_days = $faker->randomElement([1, 2, 3, 4, 5, 6, 7]);
-            $event->name = $faker->randomElement($dental_appointment_titles);
-            $event->event_conducted = $faker->randomElement([
-                'Pending' => 'Pending',
-                'Conducted' => 'Conducted',
-                'Cancelled' => 'Cancelled',
-            ]); 
-            $event->save();
-        }
- */
         $u = Admin::user();
 
         $content

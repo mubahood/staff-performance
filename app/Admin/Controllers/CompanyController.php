@@ -41,6 +41,10 @@ class CompanyController extends AdminController
         $grid->column('website', __('Website'));
         $grid->column('subdomain', __('Subdomain'));
         $grid->column('address', __('Address'));
+        $grid->column('print', __('PRINT '))->display(function () {
+            $link = url('form');
+            return '<b><a target="_blank" href="' . $link . '">PRINT BLANK</a></b>';
+        });
 
 
         return $grid;

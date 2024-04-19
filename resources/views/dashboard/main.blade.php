@@ -84,7 +84,7 @@ use App\Models\Utils;
             </div>
         </a>
 
-       {{--  <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3">
             <div class="card mt-2 mt-md-4 mb-3 border border-primary border-5">
                 <div class="card-body">
                     <div class="d-flex">
@@ -98,9 +98,9 @@ use App\Models\Utils;
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div> 
 
-        {{-- <div class="col-sm-6 col-lg-3">
+         <div class="col-sm-6 col-lg-3">
             <div class="card mt-2 mt-md-4 mb-3 border border-primary border-5">
                 <div class="card-body">
                     <div class="d-flex">
@@ -109,7 +109,7 @@ use App\Models\Utils;
                             <p class="fs-46 fw-100 lh-1">{{ $man->tasks_completed->sum('hours') }} Hours</p>
                         </div>
                         <div class="fs-46 lh-1 mt-4">
-                            🏅
+                            
                         </div>
                     </div>
                 </div>
@@ -117,8 +117,8 @@ use App\Models\Utils;
         </div>
     </div> 
 
-    <div class="row">
-        <div class="col-sm-6 col-lg-3">
+   {{--  <div class="row"> --}}
+        {{-- <div class="col-sm-6 col-lg-3">
             <div class="card mt-3">
                 <div class="card-header py-3 py-md-4">
                     <p class="fs-16 fw-700 lh-1 text-dark">Targets & Goals</p>
@@ -148,15 +148,15 @@ use App\Models\Utils;
                     @endif
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-        <div class="col-sm-6 col-lg-3">
+       {{--  <div class="col-sm-6 col-lg-3">
             <div class="card mt-3">
                 <div class="card-header py-3 py-md-4">
                     <p class="fs-16 fw-700 lh-1 text-dark">Milestones</p>
                 </div>
                 <div class="card-body mb-0">
-                    {{-- data on $man->milestones --}}
+                     data on $man->milestones 
 
                     @if ($man->milestones->count() < 1)
                         <div class="d-flex justify-content-center align-items-center" style="height: 100%">
@@ -181,10 +181,10 @@ use App\Models\Utils;
                     @endif
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
-        <div class="col-sm-6 col-lg-3">
+        {{-- <div class="col-sm-6 col-lg-3">
             <div class="card mt-3">
                 <div class="card-header  py-3 py-md-4">
                     <p class="fs-16 fw-700 lh-1 text-dark">Project weights</p>
@@ -193,9 +193,9 @@ use App\Models\Utils;
                     <canvas id="weights_chart" width="500" height="540"></canvas>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-        <div class="col-sm-6 col-lg-3">
+        {{-- <div class="col-sm-6 col-lg-3">
             <div class="card mt-3">
                 <div class="card-header  py-3 py-md-4">
                     <p class="fs-16 fw-700 lh-1 text-dark">Total Projects Completion</p>
@@ -204,13 +204,13 @@ use App\Models\Utils;
                     <canvas id="myChart2" width="500" height="540"></canvas>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> --}}
+   {{--  </div> --}}
     @php
         $i = 0;
     @endphp
-    <div class="row">
-        <div class="col-sm-6 col-lg-4">
+    {{-- <div class="row"> --}}
+        {{-- <div class="col-sm-6 col-lg-4">
             <div class="card mt-3">
                 <div class="card-header py-3 py-md-4">
                     <p class="fs-16 fw-700 lh-1 text-dark">Projects Health</p>
@@ -246,10 +246,10 @@ use App\Models\Utils;
                     @endforeach
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
-        <div class="col-sm-6 col-lg-5">
+        {{-- <div class="col-sm-6 col-lg-5">
             <div class="card mt-3">
                 <div class="card-header py-3 py-md-4">
                     <p class="fs-16 fw-700 lh-1 text-dark">Employees workload</p>
@@ -258,10 +258,10 @@ use App\Models\Utils;
                     <canvas height="200" id="myChart3"></canvas>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
-        <div class="col-sm-6 col-lg-3">
+        {{-- <div class="col-sm-6 col-lg-3">
             <div class="card mt-3">
                 <div class="card-header py-3 py-md-4">
                     <p class="fs-16 fw-700 lh-1 text-dark">Employees' Reports</p>
@@ -298,7 +298,7 @@ use App\Models\Utils;
                     @endforeach
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 </div>

@@ -148,11 +148,30 @@ class EventController extends AdminController
             'High' => 'High',
         ])->default('Medium');
 
-        $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
+        /*  $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
             Administrator::where([
-                'company_id' => auth()->user()->company_id,
+            'company_id' => auth()->user()->company_id,
+                //'admin_role_users'=>auth()->user()->id,
             ])->pluck('name', 'id')
-        )->rules('required');
+        )->rules('required'); */
+
+        $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
+            [
+                'Employees' => 'Employees',
+                'Administrators' => 'Administrators',
+                'Clients' => 'Clients',
+                'CEO' => 'CEO',
+            ]
+        );
+        
+        $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
+            [
+                'Employees' => 'Employees',
+                'Administrators' => 'Administrators',
+                'Clients' => 'Clients',
+                'CEO' => 'CEO',
+            ]
+        );
         $form->radioCard('event_conducted', 'Event status')->options([
             'Pending' => 'Pending',
             'Conducted' => 'Conducted',
