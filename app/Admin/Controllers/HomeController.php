@@ -98,3 +98,4 @@ class HomeController extends Controller
         return $content;
     }
 }
+
