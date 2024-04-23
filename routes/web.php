@@ -19,11 +19,81 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Dompdf\Dompdf;
 
+Route::get('departmental-workplan', function () {
 
+    $id = 0;
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    }
+
+    $u = User::find($id);
+    if ($u == null) {
+        die("User not found");
+    }
+    //set file name to name of department and date (dompdf) 
+
+    $tasks_tot = 0;
+    $tasks_not_submited = 0;
+    $tasks_submited = 0;
+    $tasks_done = 0;
+    $tasks_done_late = 0;
+    $tasks_missed = 0;
+    $tasks_tot = count($u->tasks);
+    foreach ($u->tasks as $key => $task) {
+        if ($task->manager_submission_status == 'Not Submitted') {
+            $tasks_not_submited++;
+        } else {
+            $tasks_submited++;
+            if ($task->manager_submission_status == 'Done') {
+                $tasks_done++;
+            } else if ($task->manager_submission_status == 'Done Late') {
+                $tasks_done_late++;
+            } else if ($task->manager_submission_status == 'Not Attended To') {
+                $tasks_missed++;
+            }
+        }
+    }
+
+    if ($tasks_submited > 0) {
+        $tasks_done .= " (" . round(($tasks_done / $tasks_submited) * 100, 0) . "%)";
+        $tasks_done_late .= " (" . round(($tasks_done_late / $tasks_submited) * 100, 0) . "%)";
+        $tasks_missed .= " (" . round(($tasks_missed / $tasks_submited) * 100, 0) . "%)";
+    }
+
+    if ($tasks_tot > 0) {
+        $tasks_not_submited .= " (" . round(($tasks_not_submited / $tasks_tot) * 100, 0) . "%)";
+        $tasks_submited .= " (" . round(($tasks_submited / $tasks_tot) * 100, 0) . "%)";
+    }
+
+
+
+
+    $title = $u->name . " " . date("Y-m-d H:i:s");
+    $file_name = $title . ".pdf";
+    $pdf = App::make('dompdf.wrapper', ['enable_remote' => true, 'enable_html5_parser' => true, 'isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+
+
+
+    $pdf->setPaper('A4', 'portrait');
+    $pdf->setOptions(['dpi' => 150, 'defaultFont' => 'open-sans']);
+    $pdf->setOptions(['isPhpEnabled' => true, 'isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+
+    $pdf->loadHTML(view('departmental-workplan', [
+        'user' => $u,
+        'title' => $title,
+        'tasks_tot' => $tasks_tot,
+        'tasks_missed' => $tasks_missed,
+        'tasks_done_late' => $tasks_done_late,
+        'tasks_done' => $tasks_done,
+        'tasks_not_submited' => $tasks_not_submited,
+        'tasks_submited' => $tasks_submited,
+    ])->render());
+    return $pdf->stream($file_name);
+});
 
 Route::get('report', function () {
 
-    // $id = $_GET['id'];
+    $id = $_GET['id'];
     $item = ReportModel::find($id);
     $pdf = App::make('dompdf.wrapper');
     $pdf->set_option('enable_html5_parser', TRUE);
@@ -33,14 +103,24 @@ Route::get('report', function () {
     return $pdf->stream('test.pdf');
 });
 
+Route::get('employee-report', function () {
+    ///*  */$id = $_GET['id'];
+    //$company = Company::find($id);
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->set_option('enable_html5_parser', TRUE);
+    $pdf->loadHTML(view('departmental-workplan')->render());
+    return $pdf->stream('departmental-workplan.pdf');
+});
 Route::get('form', function () {
-  //  $id = $_GET['id'];
-   // $company = Company::find($id);
+    ///*  */$id = $_GET['id'];
+    //$company = Company::find($id);
     $pdf = App::make('dompdf.wrapper');
     $pdf->set_option('enable_html5_parser', TRUE);
     $pdf->loadHTML(view('company-form')->render());
     return $pdf->stream('company-form.pdf');
 });
+
+
 
 
 

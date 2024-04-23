@@ -97,15 +97,26 @@ class ProjectController extends AdminController
             ->totalRow(function ($amount) {
                 //to $amount percentage
                 $u = Admin::user();
+
                 $progress = Project::where([
                     'company_id' => $u->company_id,
                     'status' => 'Active',
                 ])->sum('progress');
-                $amount = $amount / Project::where([
+                $count = Project::where([
                     'company_id' => $u->company_id,
                     'status' => 'Active',
                 ])->count();
-                
+
+                if ($count !== 0) {
+                    $count = $progress / $count;
+                }
+                /*  $amount = $amount / Project::where([
+                    'company_id' => $u->company_id,
+                    'status' => 'Active',
+                ])->count(); */
+
+
+
                 $amount = round($amount, 2);
                 if ($amount < 50) {
                     return "<b class='text-danger'>Total progress: $amount%</b>";
@@ -171,15 +182,22 @@ class ProjectController extends AdminController
         $form = new Form(new Project());
 
         $form->tab('Basic Information', function ($form) {
+            if ("name" == null) {
+                $url = url('');
+                return "<a href='{$url}' target='_blank' class='btn btn-sm btn-primary'>Generate Report</a>";
+            }
             $clients = \App\Models\Client::where('company_id', auth()->user()->company_id)
+
                 ->orderBy('name')
                 ->pluck('name', 'id');
             $form->text('name', __('Project Name'))->rules('required');
             $form->text('short_name', __('Project Short name'))->rules('required');
             $form->hidden('company_id')->value(auth()->user()->company_id);
             $form->select('client_id', __('Project Client'))
+
                 ->options($clients)
                 ->rules('required');
+
 
             $form->date('start_date', __('Project Start Date'))->rules('required');
             $form->date('end_date', __('Project End Date'))->rules('required');

@@ -121,6 +121,10 @@ class EventController extends AdminController
     protected function form()
     {
         $form = new Form(new Event());
+        $positions = \App\Models\AdminRole::where('company_id', auth()->user()->company_id)
+
+            ->orderBy('name')
+            ->pluck('name', 'id');
 
         $form->hidden('administrator_id')->default(auth()->user()->id);
         $form->hidden('company_id')->default(auth()->user()->company_id);
@@ -148,30 +152,16 @@ class EventController extends AdminController
             'High' => 'High',
         ])->default('Medium');
 
-        /*  $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
+        $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
             Administrator::where([
-            'company_id' => auth()->user()->company_id,
-                //'admin_role_users'=>auth()->user()->id,
-            ])->pluck('name', 'id')
-        )->rules('required'); */
+                'company_id' => auth()->user()->company_id,
 
-        $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
-            [
-                'Employees' => 'Employees',
-                'Administrators' => 'Administrators',
-                'Clients' => 'Clients',
-                'CEO' => 'CEO',
-            ]
-        );
-        
-        $form->multipleSelect('users_to_notify', 'Add users to notify')->options(
-            [
-                'Employees' => 'Employees',
-                'Administrators' => 'Administrators',
-                'Clients' => 'Clients',
-                'CEO' => 'CEO',
-            ]
-        );
+            ])->pluck('name', 'id')
+        )->rules('required');
+
+        $form->multipleSelect('positions_to_notify', 'Add Positions to notify')
+
+            ->options($positions);
         $form->radioCard('event_conducted', 'Event status')->options([
             'Pending' => 'Pending',
             'Conducted' => 'Conducted',

@@ -105,7 +105,7 @@ class EmployeesController extends AdminController
             ->label([
                 'Yes' => 'success',
                 'No' => 'danger',
-            ])->sortable();
+            ])->sortable()->hide();
         $grid->column('work_load_pending', 'Work Load (Hours)')->sortable();
         $grid->column('work_load_completed', 'Work Accomplished (In Hours)')->sortable();
 
@@ -116,7 +116,7 @@ class EmployeesController extends AdminController
                 $url = url("/departmental-workplan?id={$this->id}");
                 $link = '<a target="_blank" class="btn btn-primary btn-sm" href="' . $url . '">PRINT REPORT</a>';
                 return $link;
-            })->hide();
+            });
         return $grid;
     }
 

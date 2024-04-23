@@ -57,14 +57,14 @@ class HomeController extends Controller
                         'company_id' => $u->company_id,
                     ])->where(
                         [/* 'event_date', '>=', Carbon::now()->format('Y-m-d') */]
-                    )->orderBy('id', 'desc')->limit(6)->get(),
+                    )->orderBy('id', 'desc')->limit(5)->get(),
                     'tasks' => Task::where([
                         'company_id' => $u->company_id,
                     ])->where(
                         [
                             'company_id' => $u->company_id,
                         ]
-                    )->orderBy('id', 'desc')->limit(6)->get()
+                    )->orderBy('id', 'desc')->limit(5)->get()
                 ]));
             });
             $row->column(6, function (Column $column) {
