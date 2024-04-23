@@ -1,8 +1,12 @@
 <?php
 
 $company = $user->company;
-$logo_link = url('storage/' . $company->logo);
-// $link = url('css/bootstrap-print.css');
+
+if($logo_link != null){
+    $logo_link = url('storage/' . $company->logo);
+}
+
+ $link = url('css/bootstrap-print.css');
 use App\Models\Utils;
 ?>
 <!DOCTYPE html>

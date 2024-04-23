@@ -21,7 +21,7 @@ use Dompdf\Dompdf;
 
 Route::get('departmental-workplan', function () {
 
-    $id = 0;
+    $_GET['id'];
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
     }
@@ -104,8 +104,8 @@ Route::get('report', function () {
 });
 
 Route::get('employee-report', function () {
-    ///*  */$id = $_GET['id'];
-    //$company = Company::find($id);
+    $id = $_GET['id'];
+    $company = Company::find($id);
     $pdf = App::make('dompdf.wrapper');
     $pdf->set_option('enable_html5_parser', TRUE);
     $pdf->loadHTML(view('departmental-workplan')->render());
