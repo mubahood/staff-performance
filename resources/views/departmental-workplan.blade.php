@@ -1,8 +1,8 @@
 <?php
 
 $company = $user->company;
-
-if($logo_link != null){
+$logo_link = $company->logo;
+if($logo_link!= null){
     $logo_link = url('storage/' . $company->logo);
 }
 
