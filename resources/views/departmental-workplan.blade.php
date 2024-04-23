@@ -1,10 +1,10 @@
 <?php
 
 $company = $user->company;
-$logo_link = $company->logo;
-if($logo_link!= null){
+//$logo_link = $company->logo;
+/* if($logo_link != null){
     $logo_link = url('storage/' . $company->logo);
-}
+} */
 
  $link = url('css/bootstrap-print.css');
 use App\Models\Utils;
@@ -25,7 +25,7 @@ use App\Models\Utils;
         <tbody>
             <tr>
                 <td style="width: 12%;" class="">
-                    <img class="img-fluid" src="{{ $logo_link }}" alt="{{ $company->name }}">
+                    {{-- <img class="img-fluid" src="{{ $logo_link }}" alt="{{ $company->name }}"> --}}
                 </td>
                 <td class=" text-center">
                     <h1 class="h3 ">{{ $company->name }}</h1>
