@@ -23,7 +23,8 @@
                 <div class="w-100 mt-auto" style="max-width: 526px;">
 
 
-                    <h1 class="text-center mb-2 mb-md-5">{{ env('APP_NAME') }}</h1>
+                    {{-- <h1 class="text-center mb-2 mb-md-5">{{ env('APP_NAME') }}</h1> --}}
+                    <h1 class="text-center mb-2 mb-md-5">Staff Performane</h1>
 
                     {{-- if is set $_GET['message'] --}}
                     @if (isset($_GET['message']))

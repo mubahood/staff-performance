@@ -33,7 +33,7 @@ class Dashboard
         ]);
     }
 
-    public static function dashboard_events()
+    /* public static function dashboard_events()
     {
         $u = Auth::user();
         $events = Event::where([
@@ -42,16 +42,16 @@ class Dashboard
         return view('dashboard.events', [
             'items' => $events
         ]);
-    }
+    } */
 
-    public static function dashboard_news()
+    /* public static function dashboard_news()
     {
-       /*  $events = NewsPost::where([])->orderBy('id', 'desc')->limit(8)->get();
+        $events = Event::where([])->orderBy('id', 'desc')->limit(8)->get();
         return view('dashboard.news', [
             'items' => $events
-        ]); */
+        ]); 
     }
-
+ */
 
 
     /**

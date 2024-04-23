@@ -40,8 +40,8 @@ class Utils extends Model
             'assigned_to' => $u->id,
             'is_submitted' => 'No',
         ])->get();
-        
-        
+
+
         $ob->manage_tasks = Task::where([
             'manager_id' => $u->id,
             'is_submitted' => 'No',
@@ -133,25 +133,34 @@ class Utils extends Model
             'company_id' => $u->company_id,
             'status' => 'Active',
         ])->sum('progress');
-        $total_projects = $progress / Project::where([
+
+
+        $count = Project::where([
             'company_id' => $u->company_id,
             'status' => 'Active',
         ])->count();
-        $ob->total_projects_progress = round($total_projects, 2);
+
+        if($count !== 0) {
+            $count = $progress / $count;
+        }
+        $ob->total_projects_progress = round( $count, 2);
         $ob->total_projects_progress_remaining = 100 - $ob->total_projects_progress;
 
 
-        /* 
-        $table->string('')->nullable()->default('No');
-        $table->integer('work_load_pending')->nullable()->default(0);
-        $table->integer('work_load_completed')->nullable()->default(0);
-        */
+        /*  $total_projects = $progress / Project::where([
+            'company_id' => $u->company_id,
+            'status' => 'Active',
+        ])->count();
+     $ob->total_projects_progress = round($total_projects, 2);
+        $ob->total_projects_progress_remaining = 100 - $ob->total_projects_progress; */
+
+
         $employees = User::where([
             'company_id' => $u->company_id,
             'can_evaluate' => 'Yes',
         ])
-/*         ->where('work_load_pending', '>', 0) */
-        ->get(); 
+            /*         ->where('work_load_pending', '>', 0) */
+            ->get();
 
         //my pending tasks
 

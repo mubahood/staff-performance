@@ -17,8 +17,8 @@
 
     <!-- Webmanifest + Favicon / App icons -->
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" href="{{ url('assets/img/logo.png') }}" sizes="32x32">
-    <link rel="apple-touch-icon" href="{{ url('assets/img/logo.png') }}"">
+    <link rel="icon" type="image/png" href="{{ url('assets/img/logo1.jpg') }}" sizes="32x32">
+    <link rel="apple-touch-icon" href="{{ url('assets/img/logo1.jpg') }}">
 
     <!-- Theme switcher (color modes) -->
     <script src="{{ url('around') }}/assets/js/theme-switcher.js"></script>
