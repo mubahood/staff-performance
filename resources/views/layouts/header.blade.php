@@ -19,7 +19,7 @@ if (!isset($header_style)) {
 
 <div class="container px-3">
     <a href="{{ url('/') }}" class="navbar-brand pe-3">
-        <img src="{{ url('assets/img/logo.png') }}" width="200" alt="StaffPerformance">
+        <img src="{{ url('assets/img/logo1.jpg') }}" width="200" alt="StaffPerformance">
     </a>
     <div id="navbarNav" class="offcanvas offcanvas-end">
         <div class="offcanvas-header border-bottom">

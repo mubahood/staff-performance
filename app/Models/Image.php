@@ -57,7 +57,7 @@ class Image extends Model
 
         $source = Utils::docs_root() . "/storage/images/" . $src;
         if (!file_exists($source)) {
-            return 'logo.png';
+            return 'logo1.jpg';
         }
         return $src;
     }
@@ -66,7 +66,7 @@ class Image extends Model
 
         $source = Utils::docs_root() . "/storage/images/" . $src;
         if (!file_exists($source)) {
-            return 'logo.png';
+            return 'logo1.jpg';
         }
         return $src;
     }

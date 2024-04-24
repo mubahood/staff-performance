@@ -2,7 +2,7 @@
 
 $company = $item->company;
 $logo_link = url('storage/' . $company->logo);
-// $link = url('css/bootstrap-print.css');
+ $link = url('css/bootstrap-print.css');
 use App\Models\Utils;
 ?>
 <!DOCTYPE html>
@@ -36,24 +36,20 @@ use App\Models\Utils;
                     @include('title-detail', ['t' => 'CLIENT', 'd' => $item->client->name, 'style' => '2'])
                     @include('title-detail', [
                         't' => 'CONTACT',
-                        'd' => $item->client->email,
+                        'd' => $item->client->phone_number,
                         'style' => '2',
                     ])
                 </td>
                 <td>
                     @include('title-detail', [
                         't' => 'START DATE',
-                        'd' => $item->manager->name,
+                        'd' => Utils::my_date($item->start_date),
                         'style' => '2',
                     ])
-                    @include('title-detail', [
-                        't' => 'CLIENT',
-                        'd' => Utils::my_date($item->created_at),
-                        'style' => '2',
-                    ])
+                    
                     @include('title-detail', [
                         't' => 'PLANNED END DATE',
-                        'd' => Utils::my_date($item->created_at),
+                        'd' => Utils::my_date($item->end_date),
                         'style' => '2',
                     ])
                 </td>

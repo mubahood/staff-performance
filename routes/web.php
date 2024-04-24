@@ -21,7 +21,7 @@ use Dompdf\Dompdf;
 
 Route::get('departmental-workplan', function () {
 
-    $_GET['id'];
+  //  $_GET['id'];
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
     }

@@ -17,8 +17,8 @@
     <link rel="shortcut icon" href="{{$favicon}}">
     @endif --}}
 
-    <link rel="shortcut icon" href="{{ url('assets/img/logo.png') }}">
-
+    <link rel="shortcut icon" href="{{ url('assets/img/logo1.jpg') }}">
+    
     {!! Admin::css() !!}
 
     <script src="{{ Admin::jQuery() }}"></script>

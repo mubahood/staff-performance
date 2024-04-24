@@ -183,8 +183,8 @@ class ProjectController extends AdminController
 
         $form->tab('Basic Information', function ($form) {
             if ("name" == null) {
-                $url = url('');
-                return "<a href='{$url}' target='_blank' class='btn btn-sm btn-primary'>Generate Report</a>";
+                $url = url('http://127.0.0.1:8000/clients/create');
+                return "<a href='{$url}' target='_blank'></a>";
             }
             $clients = \App\Models\Client::where('company_id', auth()->user()->company_id)
 

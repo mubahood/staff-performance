@@ -2,7 +2,7 @@
 
 $company = $user->company;
 $logo_link = url('storage/' . $company->logo);
-// $link = url('css/bootstrap-print.css');
+$link = url('css/bootstrap-print.css');
 use App\Models\Utils;
 ?>
 <!DOCTYPE html>
@@ -21,12 +21,13 @@ use App\Models\Utils;
         <tbody>
             <tr>
                 <td style="width: 12%;" class="">
-                    <img class="img-fluid" src="{{ $logo_link }}" alt="{{ $company->name }}">
+                  {{--   <img class="img-fluid" src="{{ $logo_link }}" alt="{{ $company->name }}"> --}}
                 </td>
                 <td class=" text-center">
                     <h1 class="h3 ">{{ $company->name }}</h1>
                     <p class="mt-1">Address {{ $company->address }}, {{ $company->p_o_box }}</p>
-                    <p class="mt-0">Website: Email: {{ $company->website }}, Email: {{ $company->email }}</p>
+                    <p class="mt-0">Website:{{ $company->website }}, </p>
+                    <p class="mt-0">Company Email: {{ $company->email }}</p>
                     <p class="mt-0">Tel: <b>{{ $company->phone_number }}</b> , <b>{{ $company->phone_number_2 }}</b>
                     </p>
                 </td>
