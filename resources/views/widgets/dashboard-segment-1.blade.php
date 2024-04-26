@@ -67,10 +67,11 @@ if (!isset($tasks_count)) {
     2.Fixed the dashboard
     3. Fixed the app name on the login screen
     4. corrected the Employee report
-    5. when atast is assigned to someone in a meeting it goes directly to their list
+    5. when a task is assigned to someone in a meeting it goes directly to their list of pending tasks
     6.changed the favicon
-    7.for the Evaluate part (it helps to identify the workers to be tracked)
+    7.for the Evaluate part (it helps to identify the workers to be tracked so its necesary)
     8.
+
     Missing part 
-    1.Add button incase the dropdown is empty 
+    1.Add button incase the dropdown is empty and am working on it 
      --}}

@@ -11,7 +11,7 @@
                 aria-label="Powered By Excellentia East Africa" style="width: 70px; border-radius: 50%; ">
 
                 <img class="text-center img img-fluid rounded-circle" style="border-radius: 50%;"
-                    src="{{ url('assets/img/logo.png') }}" alt="logo">
+                    src="{{ url('assets/img/logo1.jpg') }}" alt="logo">
 
             </a>
 

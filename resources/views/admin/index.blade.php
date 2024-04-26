@@ -17,7 +17,7 @@
 
     <div class="row border-primary border-bottom  p-0">
         <div class="col-4 p-0 m-0">
-            {{-- <img src="/assets/icons/logo.png"> --}}
+            {{-- <img src="/assets/icons/logo1.jpg"> --}}
         </div>
         <div class="col-md-4  m-0 cpanel-tab ">
             <h2 class="text-center pt-3 pb-1 m-0 bg-primary rounded-top h3">CONTROL PANEL</h2>

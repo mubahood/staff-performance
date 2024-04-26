@@ -1,4 +1,4 @@
-![Guzzle](.github/logo.png?raw=true)
+![Guzzle](.github/logo1.jpg?raw=true)
 
 # Guzzle, PHP HTTP client
 

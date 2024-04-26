@@ -120,7 +120,7 @@ $book_link = admin_url('event-bookings/create?event=' . $d->id);
                     <!-- Item -->
                     <div class="swiper-slide">
                         <a title="Islamic university in uganda  - IUIU" href="javascript:;" class="d-block py-3">
-                            <img title="Islamic university in uganda - IUIU" src="assets/images/iuiu-logo.png"
+                            <img title="Islamic university in uganda - IUIU" src="assets/images/iuiu-logo1.jpg"
                                 class="d-block mx-auto img-fluid" width="154" alt="Brand">
                         </a>
                     </div>
@@ -131,7 +131,7 @@ $book_link = admin_url('event-bookings/create?event=' . $d->id);
                         <a title="Islamic university in uganda Alumni Association - NUDIPU" href="javascript:;"
                             class="d-block py-3">
                             <img title="Islamic university in uganda Alumni Association  - NUDIPU"
-                                src="assets/images/iuiu-aa-logo.png" class="d-block mx-auto img-fluid" width="154"
+                                src="assets/images/iuiu-aa-logo1.jpg" class="d-block mx-auto img-fluid" width="154"
                                 alt="Brand">
                         </a>
                     </div>
@@ -139,7 +139,7 @@ $book_link = admin_url('event-bookings/create?event=' . $d->id);
                     <!-- Item -->
                     <div class="swiper-slide">
                         <a title="Organisation of Islamic Cooperation - OIC" href="javascript:;" class="d-block py-3">
-                            <img title="rganisation of Islamic Cooperation - OIC" src="assets/images/oic-logo.png"
+                            <img title="rganisation of Islamic Cooperation - OIC" src="assets/images/oic-logo1.jpg"
                                 class="d-block mx-auto img-fluid" width="154" alt="Brand">
                         </a>
                     </div>
