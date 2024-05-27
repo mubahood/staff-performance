@@ -188,11 +188,7 @@
 
         {{-- <div class="col-md-6 pl-0 pr-1">
             <div class=" border border-primary m-0 rounded">
-
-            
-
-
-            </div>
+</div>
         </div> --}}
     </div>
 </div>

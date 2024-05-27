@@ -140,10 +140,10 @@ class Utils extends Model
             'status' => 'Active',
         ])->count();
 
-        if($count !== 0) {
+        if ($count !== 0) {
             $count = $progress / $count;
         }
-        $ob->total_projects_progress = round( $count, 2);
+        $ob->total_projects_progress = round($count, 2);
         $ob->total_projects_progress_remaining = 100 - $ob->total_projects_progress;
 
 
@@ -445,7 +445,6 @@ class Utils extends Model
             ) {
                 $p->phone_number = Utils::prepare_phone_number($line[2]);
             }
-
             if (
                 isset($line[3]) &&
                 $line[3] != null &&
