@@ -212,59 +212,13 @@ class MeetingController extends AdminController
             $form->select('assigned_to', __('Assigned to'))
                 ->options(Administrator::where([])
                     ->pluck('name', 'id'))->rules('required');
-            $form->select('manager_id', __('Supervised by'))
-                ->options(Administrator::where([])
-                    ->pluck('name', 'id'))->rules('required');
 
-            $form->select('delegate_submission_status', __('Delegate submission status'))
-                ->options([
-                    'Not Submitted' => 'Not Submitted',
-                    'Done' => 'Done',
-                    'Done Late' => 'Done Late',
-                    'Not Attended To' => 'Not Attended To',
-                ])->default('Not Submitted');
-            $form->textarea('delegate_submission_remarks', __('Delegate submission remarks'));
-            $form->select('manager_submission_status', __('Supervisor submission status'))
-                ->options([
-                    'Not Submitted' => 'Not Submitted',
-                    'Done' => 'Done',
-                    'Done Late' => 'Done Late',
-                    'Not Attended To' => 'Not Attended To',
-                ])->default('Not Submitted');
-
-
-            $form->textarea('manager_submission_remarks', __('Manager submission remarks'));
-            $form->hidden('project_id', __('Company id'))->default(1);
-            $form->hidden('project_section_id', __('Company id'))->default(1);
-            $form->hidden('priority', __('Priority'))->default('Medium');
-            $form->datetime('due_to_date', __('Deadline'))->rules('required');
             $form->hidden('company_id', __('Company id'))->default($u->company_id);
             $form->hidden('created_by', __('Created by'))->default($u->id);
+            $form->datetime('due_to_date', __('Deadline'))->rules('required');
         });
 
-        /*		
 
-Full texts
-id	
-created_at	
-updated_at	
-company_id	
-project_id	
-project_section_id	
-assigned_to	
-created_by	
-manager_id	
-name	
-task_description	
-due_to_date	
-delegate_submission_status	
-delegate_submission_remarks	
-manager_submission_status	
-manager_submission_remarks	
-priority	
-meeting_id	
-
-    */
 
 
         $form->tools(function (Form\Tools $tools) {
@@ -272,12 +226,6 @@ meeting_id
         });
         $form->disableReset();
         $form->disableCreatingCheck();
-
-        /*
-        $form->textarea('members_pictures', __('Members pictures'));
-        $form->textarea('attachments', __('Attachments'));
-        $form->textarea('members_present', __('Members present'));
-        $form->textarea('other_data', __('Other data')); */
 
         return $form;
     }
